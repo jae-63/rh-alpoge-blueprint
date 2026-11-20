@@ -44,6 +44,11 @@ is the usual first step toward understanding a proof this size. This is a compan
   rules out zeros right of ½.
 - **The likely crux:** the window Chebyshev bound (`windowInequality_of_artinInputs`), `VWin`, and
   the families of auxiliary fields built from theta correspondence and Siegel–Weil (`HypsAlt`).
+- **The author's 20-item timeline, mapped to the Lean** ([§6](BLUEPRINT.md#6-the-authors-timeline--lean)).
+  The note describes theta-lift chains U(X₀)→…→U(X_m) of length about √X standing in for Stepanov's
+  multiplicity. Its smoothed Λ-sum is literally `Formalism.G`, its Iwasawa tower is the 2-power
+  cyclotomic level in `VWin`, and its H¹ classes are `VWin`'s `shaLen`. Much of the theta-chain
+  machinery sits inside the misleadingly named `AbelianVarietyTheory` tree.
 - **The "literature" theorems are proved, not assumed.** 191 of the 195 `*_of_literature` theorems
   (Hironaka, Siegel–Weil, Fargues, Bhatt–Scholze, …) never use their hypothesis bundle, and that
   bundle is itself filled in with proved theorems.
