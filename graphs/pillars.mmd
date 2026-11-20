@@ -1,0 +1,83 @@
+flowchart TD
+  P0["Analytic core<br/>739 decls reached<br/>3,160 files"]
+  P1["Theta correspondence<br/>1644 decls reached<br/>3,981 files"]
+  P2["Galois reps & local Langlands<br/>1195 decls reached<br/>3,633 files"]
+  P3["Modularity / Sha window (VWin)<br/>144 decls reached<br/>7,959 files"]
+  P4["Other automorphic arithmetic<br/>217 decls reached<br/>2,797 files"]
+  P5["Weil bound<br/>4745 decls reached<br/>7,051 files"]
+  P6["Automorphic spectrum<br/>1343 decls reached<br/>15,147 files"]
+  P7["Abelian varieties<br/>9863 decls reached<br/>99,187 files"]
+  P8["Heights & Arakelov positivity<br/>4296 decls reached<br/>6,859 files"]
+  P9["Resolution of singularities<br/>161 decls reached<br/>499 files"]
+  P10["Lattices & local-to-global<br/>892 decls reached<br/>5,501 files"]
+  P11["Other Formalism<br/>565 decls reached<br/>9,657 files"]
+  P12["Other Development<br/>259 decls reached<br/>1,613 files"]
+  P13["Foundations (Ground/Reciprocity/Companion)<br/>1807 decls reached<br/>8,136 files"]
+  P5 -->|5751| P7
+  P1 -->|4677| P7
+  P8 -->|3597| P13
+  P7 -->|2171| P13
+  P7 -->|1722| P10
+  P2 -->|1568| P7
+  P7 -->|1356| P11
+  P7 -->|1273| P0
+  P1 -->|1064| P5
+  P6 -->|907| P7
+  P6 -->|737| P13
+  P5 -->|688| P8
+  P1 -->|668| P0
+  P5 -->|639| P6
+  P1 -->|630| P10
+  P6 -->|540| P8
+  P5 -->|533| P0
+  P5 -->|491| P13
+  P0 -->|347| P11
+  P2 -->|302| P5
+  P1 -->|297| P11
+  P6 -->|289| P5
+  P10 -->|240| P0
+  P10 -->|195| P11
+  P5 -->|178| P11
+  P2 -->|177| P13
+  P12 -->|175| P7
+  P2 -->|161| P11
+  P3 -->|159| P7
+  P5 -->|153| P10
+  P10 -->|115| P13
+  P1 -->|106| P13
+  P13 -->|88| P11
+  P6 -->|87| P10
+  P13 -->|87| P7
+  P1 -->|83| P2
+  P4 -->|83| P7
+  P2 -->|70| P0
+  P5 -->|70| P9
+  P12 -->|59| P13
+  P11 -->|56| P0
+  P1 -->|55| P4
+  P3 -->|49| P5
+  P1 -->|41| P6
+  P6 -->|39| P11
+  P2 -->|37| P4
+  P0 -->|37| P7
+  P2 -->|36| P1
+  P2 -->|35| P12
+  P11 -->|29| P4
+  P2 -->|26| P6
+  P4 -->|22| P11
+  P2 -->|21| P3
+  P6 -->|21| P0
+  style P0 fill:#d62728
+  style P1 fill:#9467bd
+  style P2 fill:#1f77b4
+  style P3 fill:#ff7f0e
+  style P4 fill:#bcbd22
+  style P5 fill:#2ca02c
+  style P6 fill:#17becf
+  style P7 fill:#8c564b
+  style P8 fill:#e377c2
+  style P9 fill:#7f7f7f
+  style P10 fill:#aec7e8
+  style P11 fill:#c7c7c7
+  style P12 fill:#dbdb8d
+  style P13 fill:#f7f7f7

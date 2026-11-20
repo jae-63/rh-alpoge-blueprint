@@ -1,0 +1,48 @@
+flowchart TD
+  subgraph S0["Main.lean: the five claimed theorems"]
+    RH["riemannHypothesis<br/>riemannZeta_eq_zero_re"]
+    HP["LFunction_ne_zero_of_half_lt_re"]
+    ST["LFunction_eq_zero_re"]
+    PR["LFunction_eq_zero_re_of_isPrimitive"]
+  end
+  subgraph S1["Classical reductions (Mathlib only, about 200 lines)"]
+    RHR["rhOfAll = VW.rh_of_every<br/>→ VW.rh_of_right<br/>(ζ functional equation)"]
+    CL["critAll = VW.critLine<br/>(Λ(χ,s) functional equation)"]
+    CS["Claim.strip<br/>(imprimitive → primitive, then reflect)"]
+  end
+  RH --> RHR
+  ST --> CS
+  PR --> CL
+  RHR --> ALL
+  CL --> ALL
+  CS --> ALL
+  HP --> ALL
+  ALL["allChi : EveryCharacter<br/>L(χ,s) ≠ 0 for Re s > 1/2<br/>= FinalTheorems.everyCharacter"]
+  ALL --> EOR["everyCharacter_of_row"]
+  EOR --> ROW["Gal.Int.galoisLocalGlobalStrong_recParameter<br/>Row0b: Galois reps for RACSDC π on GL_a over CM fields"]
+  ROW --> GTL["galoisRepresentations_of_thetaLift"]
+  GTL --> TL["TP.K.tLiftK : TLiftK<br/>global theta lift U(n) → U(d)"]
+  GTL --> GEO["Geo.geoOne_holds<br/>geometric realisation"]
+  EOR --> LLC["Zero.LLC.recTExists<br/>local Langlands for GL_n"]
+  EOR --> VW1["One.vwin_of_row → VWin<br/>Sha-length bounds for auxiliary fields"]
+  VW1 --> AWI["One.Join.automorphic_window_of_inputs<br/>(base change, CM abelian inputs)"]
+  EOR --> LIT["every_character_of_literature_of_vWin<br/>O = ⟨Row, LLC, Row⟩ ; ~195 'literature' theorems"]
+  LIT --> ETI["Lit.every_character_of_theta_integrals_local_matching"]
+  ETI --> GRN["GreenBridge.green_of_regular<br/>Green: cuspidal chars of GL_d(F_g)"]
+  ETI --> HYP["Lit.nonempty_hyps_definite_side_of_closed_bound<br/>HypsAlt: the family package (~40 fields)<br/>Siegel–Weil, Howe duality, theta integrals"]
+  ETI --> GVW["Top.every_character_of_green_v_win"]
+  GVW --> IMP["Top.imprimitive<br/>ZeroFreeAll (primitive) → all χ"]
+  GVW --> ZFA["Top.zero_free_all_of_green_v_win"]
+  ZFA --> TOPG["shape_closed_link_n_of_green + forall_goal_of_shape_of_hyps<br/>⇒ TopG (families are connected)"]
+  ZFA --> SUP["Top.supplyChi : VWinAt ψ 401 → HostExW (3/2)"]
+  ZFA --> ZTG["Top.zeroFreeAll_of_topG"]
+  ZTG --> TW["HC.zeroFreeOn_of_tiedWin_cyc"]
+  TW --> CHEB["Comparison₂.level_gm_le_on_family_scales<br/>Gm(x) ≤ x^(1/2+O(ε)) on windows<br/>(windowInequality_of_artinInputs)"]
+  TW --> LAN["Comparison₂.formB / Landau.zero_free_of_Chebyshev_growth<br/>Gm ≤ x^θ ⇒ no zeros with Re s > θ"]
+
+  classDef classical fill:#e8f5e9,stroke:#2e7d32
+  classDef crux fill:#ffebee,stroke:#c62828,stroke-width:2px
+  classDef known fill:#e3f2fd,stroke:#1565c0
+  class RHR,CL,CS,IMP,LAN classical
+  class CHEB,VW1,AWI,HYP,TOPG,SUP,ZTG,TW crux
+  class ROW,GTL,TL,GEO,LLC,GRN,LIT known

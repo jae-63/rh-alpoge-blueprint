@@ -1,0 +1,7 @@
+# Large generated index files: regenerate with scripts/index.py (see README)
+work/
+*.tsv
+t*.json
+imp*.json
+__pycache__/
+.DS_Store
