@@ -1,0 +1,220 @@
+## 1. Stepanov determinant   /stepanov|determinant|wronsk/
+   all=7734 reached(d<=12)=1039  min depth=5
+     430 Development.WeilBound.ThetaLifts.LeviDeterminants
+     156 Development.AutomorphicArithmetic.Foundations.GaloisRepresentations
+      56 CompanionTheory.HarishChandraModules.LowKTypeMultiplicity.DiscreteSeriesCharacters
+      36 Development.AbelianVarietyTheory.Proofs.TwistedOperators
+     d=5 GlobalTheory.RoadWGeo.ESAt  [Development.AbelianVarietyTheory.Definitions.GaloisGeometry.DivisionOfDeterminantCharacter:94]
+     d=5 GlobalTheory.RoadWGeo.LacWtAt  [Development.AbelianVarietyTheory.Definitions.GaloisGeometry.DivisionOfDeterminantCharacter:125]
+     d=5 UpperTheory.TP.absIso  [Development.AutomorphicArithmetic.Foundations.GaloisRepresentations.ThetaParseval.BlockDeterminants.AbsIso:6]
+     d=5 UpperTheory.TP.brEx  [Development.AutomorphicArithmetic.Foundations.GaloisRepresentations.ThetaParseval.BlockDeterminants.MemClosureOf:409]
+     d=5 UpperTheory.TP.absNe  [Development.AutomorphicArithmetic.Foundations.GaloisRepresentations.ThetaParseval.BlockDeterminants.AbsNe:5]
+     d=5 UpperTheory.TP.projEx  [Development.AutomorphicArithmetic.Foundations.GaloisRepresentations.ThetaParseval.BlockDeterminants.ProjEx:98]
+## 2. D^p = 0 on CM curve, invariant derivation   /invariantderiv|serrederiv|derivation.*cm|cmcurve|ramanujanderiv/
+   all=439 reached(d<=12)=72  min depth=4
+      39 Development.AbelianVarietyTheory.Proofs.DivisorProofs
+      13 Development.AbelianVarietyTheory.PublishedTheorems.Divisors₂
+       5 Development.AbelianVarietyTheory.Proofs.CubicalLineBundles
+       4 Development.AbelianVarietyTheory.Proofs.HeightProofs
+     d=4 UpperTheory.LiteratureTheorems.cm_curve_good_outside_prime_st_of_literature  [Development.AutomorphicArithmetic.ThetaCorrespondence.ThetaPairLifts.ThirdPlaceSeries.EveryCharacterOfLiteratureOfVWin:277]
+     d=5 GlobalTheory.Published.cmCurveGoodOutsidePrime  [Development.AbelianVarietyTheory.Proofs.DivisorProofs.CmCurveGoodOutsidePrime:47]
+     d=5 GlobalTheory.Published.CMCurveGoodOutsidePrimeSt  [Development.AbelianVarietyTheory.PublishedTheorems.Divisors₂.CmCurveGoodOutsidePrimePremises:35]
+     d=6 GlobalTheory.T.quadraticTwist_cmCurve_model_discriminant_negPrimeCube  [Development.AbelianVarietyTheory.Proofs.DivisorProofs.QuadraticTwistCmCurveModelDiscriminantNegPrimeCuStatement:10]
+     d=6 GlobalTheory.CMModel.shortTwist_Δ  [Development.AbelianVarietyTheory.Proofs.DivisorProofs.CmCurveGoodOutsidePrime:19]
+     d=6 GlobalTheory.CMModel.shortTwist_j  [Development.AbelianVarietyTheory.Proofs.DivisorProofs.CmCurveGoodOutsidePrime:30]
+## 3. qN = M^k + R, path quadric, Poincaré bundle, sixfold cover   /quadric|pathquad|poincarebundle|sixfold|parseval/
+   all=3521 reached(d<=12)=1755  min depth=2
+    1735 Development.AutomorphicArithmetic.Foundations.GaloisRepresentations
+       7 Development.AbelianVarietyTheory.Proofs.GlobalInterpolation
+       5 Development.AbelianVarietyTheory.Proofs.DivisorProofs
+       3 Development.AutomorphicSpectrum.Proofs.BlockDecomposition
+     d=2 UpperTheory.TP.K.tLiftK  [Development.AutomorphicArithmetic.Foundations.GaloisRepresentations.ThetaParseval.ThetaKernels.TLiftK:4]
+     d=3 UpperTheory.TP.TLiftK  [Development.AutomorphicArithmetic.Foundations.GaloisRepresentations.ThetaParseval.HalfIndexLattices.TLiftK:12]
+     d=3 UpperTheory.TP.tLift_holds_k  [Development.AutomorphicArithmetic.Foundations.GaloisRepresentations.ThetaParseval.ThetaKernels.TPGHolds:58]
+     d=4 UpperTheory.TP.cj  [Development.AutomorphicArithmetic.Foundations.GaloisRepresentations.ThetaParseval.SchurStep:76]
+     d=4 UpperTheory.TP.IsLift  [Development.AutomorphicArithmetic.Foundations.GaloisRepresentations.ThetaParseval.SchurStep:106]
+     d=4 UpperTheory.TP.W.GoodK  [Development.AutomorphicArithmetic.Foundations.GaloisRepresentations.ThetaParseval.HalfIndexLattices.SplitStab:18]
+## 4. W(1_S) >= 0 via a determinant   /weilpositiv|wnonneg|w_nonneg|positivitycriterion|weilcriterion/
+   all=121 reached(d<=12)=14  min depth=10
+       5 Development.AbelianVarietyTheory.Proofs.GlobalInterpolation
+       4 Development.AbelianVarietyTheory.Proofs.DivisorProofs
+       1 Development.AutomorphicSpectrum.Proofs.BlockDecomposition
+       1 Development.WeilBound.CoreStatements.PublishedTheorems
+     d=10 GlobalTheory.T.weil_criterion_invariant_measure_homogeneous_space  [Development.AbelianVarietyTheory.Proofs.GlobalInterpolation.WeilCriterionInvariantMeasureHomogeneousSpaceStatement:7]
+     d=10 GlobalTheory.PerronPsi.w_nonneg  [Development.AbelianVarietyTheory.Proofs.GlobalInterpolation.TruncatedPerronPsi:213]
+     d=10 GlobalTheory.CompanionTheory.EpConvB.tw_nonneg  [Development.AutomorphicSpectrum.Proofs.BlockDecomposition.OneAddInvPowMulRpowLe:414]
+     d=11 GlobalTheory.HeightMeanValueBounds.lw_nonneg  [Development.AbelianVarietyTheory.Proofs.DivisorProofs.ToricValueHeightBoundOfDenominatorsMeans:121]
+     d=11 GlobalTheory.WeilCriterion.modulusClause  [Development.AbelianVarietyTheory.Proofs.GlobalInterpolation.WeilCriterionInvariantMeasureHomogeneousSpace:210]
+     d=11 PositivityTheory.AdelicQuotientData.PKEq1.law_nonneg  [Development.WeilBound.CoreStatements.PublishedTheorems.JacquetShalikaRigidity.KernelEqualityFirstOf:281]
+## 5. smoothed von Mangoldt sum, Guinand-Weil   /guinand|explicitformula|vonmangoldt/
+   all=701 reached(d<=12)=44  min depth=6
+      21 Formalism.SharpRestriction.RamificationFrobenius.TotientGaloisClasses
+      12 Development.AbelianVarietyTheory.Proofs.GlobalInterpolation
+       8 Development.AbelianVarietyTheory.Proofs.CharacterTheory
+       2 Formalism.LocalToGlobal.SiegelLatticeTheory.HaarTransversals
+     d=6 Formalism.HC.ZeroFreeAll  [Formalism.SharpRestriction.RamificationFrobenius.TotientGaloisClasses.ExplicitFormulaErrorOfHostConditions:18]
+     d=7 GlobalTheory.ZeroBounds.explicit_formula_and_window_count  [Development.AbelianVarietyTheory.Proofs.GlobalInterpolation.ExplicitFormulaAndWindowCount:9]
+     d=7 Formalism.HC.ZeroFreeOn  [Formalism.SharpRestriction.RamificationFrobenius.TotientGaloisClasses.ExplicitFormulaErrorOfHostConditions:14]
+     d=8 GlobalTheory.ExplicitFormula.truncated_explicit_formula  [Development.AbelianVarietyTheory.Proofs.GlobalInterpolation.TruncatedExplicitFormula:11]
+     d=8 Formalism.HC.Level  [Formalism.SharpRestriction.RamificationFrobenius.TotientGaloisClasses.ExplicitFormulaErrorOfHostConditions:8]
+     d=8 Formalism.HC.Level.cyc  [Formalism.SharpRestriction.RamificationFrobenius.TotientGaloisClasses.ExplicitFormulaErrorOfHostConditions:121]
+## 6. W(...) >= 0 gives zero-free beyond 1 - eta   /zerofree/
+   all=1001 reached(d<=12)=63  min depth=5
+      28 Development.AbelianVarietyTheory.Proofs.GlobalInterpolation
+       7 Formalism.SharpRestriction.RamificationFrobenius.TotientGaloisClasses
+       6 Formalism.GL3MeanSquares.SecondEstimateOfIntervalHypothesis
+       4 Development.AutomorphicArithmetic.CharacterBoxes.ZeroFreeAllOfTopG
+     d=5 UpperTheory.Top.zero_free_all_of_green_v_win  [Development.AutomorphicArithmetic.ThetaCorrespondence.ThetaPairLifts.ThirdPlaceSeries.TopPlug:12]
+     d=6 UpperTheory.Top.zeroFreeAll_of_topG  [Development.AutomorphicArithmetic.CharacterBoxes.ZeroFreeAllOfTopG:26]
+     d=6 Formalism.HC.ZeroFreeAll  [Formalism.SharpRestriction.RamificationFrobenius.TotientGaloisClasses.ExplicitFormulaErrorOfHostConditions:18]
+     d=7 UpperTheory.Top.TopG  [Development.AutomorphicArithmetic.CharacterBoxes.ZeroFreeAllOfTopG:12]
+     d=7 UpperTheory.Top.hypV_of_cls  [Development.AutomorphicArithmetic.CharacterBoxes.ZeroFreeAllOfTopG:16]
+     d=7 UpperTheory.Top.eFamC_of_cls  [Development.AutomorphicArithmetic.CharacterBoxes.ZeroFreeAllOfTopG:19]
+## 7. GGP periods, interlacing   /ggp|interlac|besselperiod|gangross/
+   all=2213 reached(d<=12)=230  min depth=7
+      92 Development.AbelianVarietyTheory.Definitions.Foundations
+      35 Development.AbelianVarietyTheory.Proofs.DivisorProofs
+      33 Development.AbelianVarietyTheory.Proofs.TwistedOperators
+      25 Development.AutomorphicSpectrum.Proofs.BlockDecomposition
+     d=7 GlobalTheory.SignedHC.GridData  [Development.AbelianVarietyTheory.Definitions.Foundations.StrictInterlaceIffDescEnum:730]
+     d=7 GlobalTheory.T.besselPeriodCorank_converges_column  [Development.AbelianVarietyTheory.Proofs.TwistedOperators.BesselPeriodCorankConvergesColumnStatement:13]
+     d=7 GlobalTheory.T.bessel_period_nonvanishing_ascent_of_depth_data  [Development.AbelianVarietyTheory.Proofs.TwistedOperators.BesselPeriodNonvanishingAscentOfDepthDataStatement:11]
+     d=7 Formalism.MainNotions.PrimeDegreeVariant.Interlace  [Formalism.SharpRestriction.Divisibility.PrimeDegreeVariant:29]
+     d=8 GlobalTheory.SignedHC.entries  [Development.AbelianVarietyTheory.Definitions.Foundations.StrictInterlaceIffDescEnum:8]
+     d=8 GlobalTheory.WtInterlaceC.weights_top_grid  [Development.AbelianVarietyTheory.Proofs.DivisorProofs.OnePowNotMemHeightOneAsIdeal:643]
+## 8. iterated theta lifts U(X0) -> ... -> U(Xm)   /iteratedlift|iteratedtheta|thetachain|liftchain|chainlift|iterlift/
+   all=397 reached(d<=12)=69  min depth=7
+      40 Development.AbelianVarietyTheory.Definitions.Divisors
+      18 Development.AbelianVarietyTheory.Proofs.TwistedOperators
+       8 Formalism.LocalToGlobal.UnitaryNorms.LeastSplitAuxiliaryPrimeThetaChainSpec
+       2 Development.AbelianVarietyTheory.Proofs.DecoratedLatticeProofs
+     d=7 GlobalTheory.ChiGrid.rankV  [Development.AbelianVarietyTheory.Definitions.Divisors.LeastSplitAuxiliaryPrimeThetaChainSpec:127]
+     d=7 GlobalTheory.ChiGrid.gap  [Development.AbelianVarietyTheory.Definitions.Divisors.LeastSplitAuxiliaryPrimeThetaChainSpec:140]
+     d=7 GlobalTheory.ChiGrid.q0  [Development.AbelianVarietyTheory.Definitions.Divisors.LeastSplitAuxiliaryPrimeThetaChainSpec:207]
+     d=7 GlobalTheory.Corev.ChainParOfGap.chainPar_of_nodeGap  [Development.AbelianVarietyTheory.Proofs.DecoratedLatticeProofs.ThetaChainStepRealThetaRuleOfNodesFarApart:17]
+     d=8 GlobalTheory.ChiGrid.a_add_le  [Development.AbelianVarietyTheory.Definitions.Divisors.LeastSplitAuxiliaryPrimeThetaChainSpec:34]
+     d=8 GlobalTheory.ChiGrid.sLen  [Development.AbelianVarietyTheory.Definitions.Divisors.LeastSplitAuxiliaryPrimeThetaChainSpec:121]
+## 9. Chowla-Selberg, Weyl, Siegel mass   /chowlaselberg|siegelmass|massformula/
+   all=30789 reached(d<=12)=713  min depth=7
+      82 Formalism.PeriodIntegrals.UnitaryGroupMassFormula.AdelicUnimodularity
+      45 Formalism.PeriodIntegrals.UnitaryGroupMassFormula.HighestWeightUniqueness
+      37 Formalism.PeriodIntegrals.UnitaryGroupMassFormula.LatticeColumns
+      36 Development.WeilBound.CoreStatements.AutomorphicKernels
+     d=7 GlobalTheory.T.unitary_mass_formula  [Development.WeilBound.CoreStatements.AutomorphicKernels.IsobaricBaseChange.IntegralCoefficientBaseChange.UnitaryBaseChangeCharacters.UnitaryBaseChangeLinks.UnitaryMassFormulaStatement:7]
+     d=7 Formalism.MainNotions.StandardLattice.SiegelMassRatioCM  [Formalism.SharpRestriction.GlobalSchurBounds.StandardLattice:281]
+     d=8 GlobalTheory.BCT.MassU.mass_unitary  [Development.WeilBound.CoreStatements.AutomorphicKernels.IsobaricBaseChange.IntegralCoefficientBaseChange.UnitaryBaseChangeCharacters.UnitaryBaseChangeLinks.UnitaryMassFormula:266]
+     d=8 PI.UnitaryGroupMassFormula.AdIndexEq.commensurated_of_isOpen_isCompact  [Formalism.PeriodIntegrals.UnitaryGroupMassFormula.AdelicIndexEquality.CommensuratedOfIsOpenIsCompact:11]
+     d=8 PI.AdicCompletionValuation.isCompact_adicCompletionIntegers  [Formalism.PeriodIntegrals.UnitaryGroupMassFormula.AdelicLocalCompactness.AdeleLC:250]
+     d=8 PIW.ClassFinD.KGL  [Formalism.PeriodIntegrals.UnitaryGroupMassFormula.IdeleClassFiniteness.OhatCompact:36]
+## 10. divisibility of the m-fold lift   /divisib/
+   all=12769 reached(d<=12)=1698  min depth=5
+     134 Development.AutomorphicArithmetic.Foundations.GaloisRepresentations
+      96 Formalism.LocalToGlobal.Divisibility.DefGroup
+      91 Formalism.SharpRestriction.Divisibility.OrbitPlaces
+      77 Development.AutomorphicSpectrum.Proofs.DivisibilityProofs
+     d=5 UpperTheory.Gal.Int.Div.seedFinOdd_of_geoOne  [Development.AutomorphicArithmetic.Foundations.GaloisRepresentations.IntegralStructures.ZetaCharacterDivisibility.MainFin:13]
+     d=5 UpperTheory.Gal.Int.Div.CrysAt  [Development.AutomorphicArithmetic.Foundations.GaloisRepresentations.IntegralStructures.ZetaCharacterDivisibility.InsideRefl:38]
+     d=5 UpperTheory.Gal.Int.Div.PhiKilled  [Development.AutomorphicArithmetic.Foundations.GaloisRepresentations.IntegralStructures.ZetaCharacterDivisibility.InsideRefl:48]
+     d=5 UpperTheory.Gal.Int.Div.JumpsOcc  [Development.AutomorphicArithmetic.Foundations.GaloisRepresentations.IntegralStructures.ZetaCharacterDivisibility.InsideRefl:64]
+     d=5 UpperTheory.Gal.Int.Div.VBase  [Development.AutomorphicArithmetic.Foundations.GaloisRepresentations.IntegralStructures.ZetaCharacterDivisibility.InsideRefl:73]
+     d=6 GlobalTheory.T.pDivisibleGroup_datum_of_connected_dual_connected  [Development.AbelianVarietyTheory.Proofs.DivisorProofs.PDivisibleGroupDatumOfConnectedDualConnectedStatement:6]
+## 11. Iwasawa tower   /iwasawa/
+   all=34443 reached(d<=12)=4359  min depth=4
+    3575 Development.AbelianVarietyTheory.Proofs.IwasawaDecomposition
+      57 Development.WeilBound.CoreStatements.AutomorphicKernels
+      54 Development.AbelianVarietyTheory.Proofs.DecoratedLatticeProofs
+      47 Development.AutomorphicSpectrum.Proofs.BlockDecomposition
+     d=4 GlobalTheory.WeilDeligne.WD.lpSum_zero  [Development.AbelianVarietyTheory.Proofs.IwasawaDecomposition.Mono0OfLpDimEqOne:35]
+     d=4 GlobalTheory.WeilDeligne.WD.lpTw_zero  [Development.AbelianVarietyTheory.Proofs.IwasawaDecomposition.Mono0OfLpDimEqOne:53]
+     d=4 GlobalTheory.WeilDeligne.WD.lpTw_add  [Development.AbelianVarietyTheory.Proofs.IwasawaDecomposition.Mono0OfLpDimEqOne:58]
+     d=4 GlobalTheory.globalArtinReciprocity_holds  [Development.AbelianVarietyTheory.Proofs.IwasawaDecomposition.GlobalArtinReciprocityHolds:5]
+     d=5 GlobalTheory.Mem.LiteralAutomorphy.rowRatW_of_rowTest  [Development.AbelianVarietyTheory.Proofs.IwasawaDecomposition.RowRatWOfRowTest:9]
+     d=5 GlobalTheory.WeilDeligne.WD.lpSum_comm  [Development.AbelianVarietyTheory.Proofs.IwasawaDecomposition.Mono0OfLpDimEqOne:40]
+## 12. Seesaw, Bessel period, Rallis   /seesaw|rallis/
+   all=3336 reached(d<=12)=229  min depth=4
+      57 Development.AutomorphicArithmetic.ThetaCorrespondence.RallisInnerProduct
+      34 Development.AbelianVarietyTheory.Proofs.TwistedOperators
+      31 Development.AbelianVarietyTheory.Proofs.DivisorProofs
+      18 Development.AbelianVarietyTheory.Proofs.AbelianSchemeLawProofs
+     d=4 UpperTheory.LiteratureTheorems.rallis_inner_product_convergent_of_literature  [Development.AutomorphicArithmetic.ThetaCorrespondence.ThetaPairLifts.ThirdPlaceSeries.EveryCharacterOfLiteratureOfVWin:485]
+     d=5 GlobalTheory.Published.RallisInnerProductConvergent  [Development.AbelianVarietyTheory.PublishedTheorems.TwistedTraceFormula.LowerLiftsZeroOfWittIdxEqZero:41]
+     d=5 UpperTheory.TP.rallis_k  [Development.AutomorphicArithmetic.Foundations.GaloisRepresentations.ThetaParseval.ThetaKernels.TPGRallis:99]
+     d=5 UpperTheory.Lit.Rallis.RallisIPProof.rallis_of_dm  [Development.AutomorphicArithmetic.ThetaCorrespondence.FockModels.RallisDM:24]
+     d=6 GlobalTheory.Core.Rk.Seesaw.seesaw_fubini  [Development.AbelianVarietyTheory.Proofs.DecoratedLatticeProofs.SeesawFubiniTwoLiftsModerateGrowthKernels:106]
+     d=6 GlobalTheory.RallisIP.thetaLift  [Development.AbelianVarietyTheory.PublishedTheorems.TwistedTraceFormula.LowerLiftsZeroOfWittIdxEqZero:22]
+## 13. Bost slope inequality   /bost|slopeineq/
+   all=99 reached(d<=12)=10  min depth=9
+       5 Formalism.HarderNarasimhan.HarderNarasimhanProofs.SlopeIneqMean
+       4 Formalism.LocalToGlobal.GlobalTheory.GL4
+       1 Development.AbelianVarietyTheory.Proofs.DivisorProofs
+     d=9 Formalism.L2.GlobalTheoryTheory.TraceIntegrality.lower_slope_inequality_family  [Formalism.LocalToGlobal.GlobalTheory.GL4.LowerSlopeInequalityFamily:14]
+     d=9 Formalism.L2.GlobalTheoryTheory.TraceIntegrality.slope_inequality_family_four  [Formalism.LocalToGlobal.GlobalTheory.GL4.PStmtFree:17]
+     d=10 Formalism.HN.PlaceOperatorNorms.opNormAt_pos  [Formalism.HarderNarasimhan.HarderNarasimhanProofs.SlopeIneqMean:93]
+     d=10 Formalism.L2.GlobalTheoryTheory.TraceIntegrality.column_exact_slope_family  [Formalism.LocalToGlobal.GlobalTheory.GL4.LowerSlopeInequalityFamily:11]
+     d=10 Formalism.L2.GlobalTheoryTheory.TraceIntegrality.slope_inequality_constant_four  [Formalism.LocalToGlobal.GlobalTheory.GL4.PStmtFree:14]
+     d=11 GlobalTheory.T.exists_regular_kodairaSpencerCoordinate_affine_off_boundary  [Development.AbelianVarietyTheory.Proofs.DivisorProofs.ExistsRegularKodairaSpencerCoordinateAffineOffBoStatement:7]
+## 14. cost of each lift; 2/3; division   /costwindow|liftcost|twothird|division/
+   all=2243 reached(d<=12)=296  min depth=5
+      65 Development.AbelianVarietyTheory.Proofs.IwasawaDecomposition
+      34 Development.AbelianVarietyTheory.Proofs.DivisorProofs
+      22 GroundTheory.HeightsAndTheta.Heights.ComplexAnalyticSets
+      15 Formalism.QuotientMetricDivisors.Statement
+     d=5 GlobalTheory.RoadWGeo.ESAt  [Development.AbelianVarietyTheory.Definitions.GaloisGeometry.DivisionOfDeterminantCharacter:94]
+     d=5 GlobalTheory.RoadWGeo.LacWtAt  [Development.AbelianVarietyTheory.Definitions.GaloisGeometry.DivisionOfDeterminantCharacter:125]
+     d=6 GlobalTheory.RoadWGeo.Lacunary  [Development.AbelianVarietyTheory.Definitions.GaloisGeometry.DivisionOfDeterminantCharacter:15]
+     d=6 GlobalTheory.RoadWGeo.wtJumps  [Development.AbelianVarietyTheory.Definitions.GaloisGeometry.DivisionOfDeterminantCharacter:58]
+     d=6 UpperTheory.Gal.Int.Div.divAll_holds  [Development.AutomorphicArithmetic.Foundations.GaloisRepresentations.IntegralStructures.ZetaCharacterDivisibility.DivisionOneGeometricRepresentation:54]
+     d=6 Formalism.L2.DIV.DivisionCompatibilityDataThreeSided  [Formalism.LocalToGlobal.Divisibility.DivisionCompatibleToSub2Indef2:119]
+## 15. integral structure across Hecke characters (gcd)   /integralstructure|heckegcd/
+   all=1133 reached(d<=12)=740  min depth=1
+     738 Development.AutomorphicArithmetic.Foundations.GaloisRepresentations
+       2 Development.AbelianVarietyTheory.Proofs.DivisorProofs
+     d=1 UpperTheory.Gal.Int.galoisLocalGlobalStrong_recParameter  [Development.AutomorphicArithmetic.Foundations.GaloisRepresentations.IntegralStructures.RowSrc:6]
+     d=2 UpperTheory.Gal.Int.galoisRepresentations_of_thetaLift  [Development.AutomorphicArithmetic.Foundations.GaloisRepresentations.IntegralStructures.GaloisRepresentationsOfThetaLift:6]
+     d=2 UpperTheory.Gal.Int.recT  [Development.AutomorphicArithmetic.Foundations.GaloisRepresentations.IntegralStructures.Development:18]
+     d=3 UpperTheory.Gal.Int.galoisLocalGlobalStrong_of_geometry_lift  [Development.AutomorphicArithmetic.Foundations.GaloisRepresentations.IntegralStructures.Development:30]
+     d=3 UpperTheory.Gal.Int.Geo.geoOne_holds  [Development.AutomorphicArithmetic.Foundations.GaloisRepresentations.IntegralStructures.GeometricFlagBases.WeightOneGeometricRealization:11]
+     d=4 UpperTheory.Gal.Int.galoisLocalGlobal_of_geometry_lift  [Development.AutomorphicArithmetic.Foundations.GaloisRepresentations.IntegralStructures.Development:27]
+## 16. relative trace formula, projected Poincaré series   /relativetrace|poincareseries/
+   all=130 reached(d<=12)=36  min depth=9
+      31 Development.AbelianVarietyTheory.Proofs.TwistedOperators
+       5 Formalism.LocalToGlobal.SiegelLatticeTheory.HaarTransversals
+     d=9 GlobalTheory.T.poincareSeries_pairing_ne_zero_of_large_level  [Development.AbelianVarietyTheory.Proofs.TwistedOperators.PoincareSeriesIdentityTermDominatesStatement:11]
+     d=9 GlobalTheory.T.coefficientPoincareSeries_move_real_point  [Development.AbelianVarietyTheory.Proofs.TwistedOperators.CoefficientPoincareSeriesMoveRealPointStatement:23]
+     d=10 GlobalTheory.PoinConj.poin_conj  [Development.AbelianVarietyTheory.Proofs.TwistedOperators.CoefficientPoincareSeriesMoveRealPoint:76]
+     d=10 GlobalTheory.T.poincareSeries_smooth_moderateGrowth_deriv  [Development.AbelianVarietyTheory.Proofs.TwistedOperators.PoincareSeriesSmoothModerateGrowthDerivStatement:13]
+     d=10 GlobalTheory.T.coefficientPoincareSeries_isAutomorphic  [Development.AbelianVarietyTheory.Proofs.TwistedOperators.CoefficientPoincareSeriesIsAutomorphicStatement:12]
+     d=10 GlobalTheory.IdDom.identity_dominates  [Development.AbelianVarietyTheory.Proofs.TwistedOperators.PoincareSeriesIdentityTermDominates:40]
+## 17. H^1(o_E[1/l], Q_l/Z_l(-e)), weak Vandiver   /vandiver|shalen|kgroup|lichtenbaum/
+   all=108 reached(d<=12)=7  min depth=7
+       4 Development.AutomorphicArithmetic.AutomorphicVarieties.GaloisLibrary
+       1 Development.AbelianVarietyTheory.Proofs.ThetaShiftProofs
+       1 Development.WeilBound.RepresentationTheoryGL.ArchimedeanBaseChange
+       1 Formalism.GaloisCohomology.Statement
+     d=7 Formalism.GaloisCohomology.shaLen  [Formalism.GaloisCohomology.Statement:78]
+     d=11 UpperTheory.V.Base.shaLenEq  [Development.AutomorphicArithmetic.AutomorphicVarieties.GaloisLibrary.SelmerTransport.ShaLenEq:9]
+     d=11 PositivityTheory.Rg.BcB.F.Rd.B.t2_block_group  [Development.WeilBound.RepresentationTheoryGL.ArchimedeanBaseChange.ArchimedeanBaseChangeProof.SatakeExponents.UniformizerValuations.FrameReading.LimitbConv:22]
+     d=12 GlobalTheory.FieldBaseChange.isPullback_groupBase  [Development.AbelianVarietyTheory.Proofs.ThetaShiftProofs.ExpansionBijectiveOverFields:208]
+     d=12 UpperTheory.V.LDataCardLeFinrank.VLen_le_shaLen_add  [Development.AutomorphicArithmetic.AutomorphicVarieties.GaloisLibrary.GaloisCohomologyLength.Formula:29]
+     d=12 UpperTheory.V.LDataCardLeFinrank.shaLen_eq_shaInv  [Development.AutomorphicArithmetic.AutomorphicVarieties.GaloisLibrary.GaloisCohomologyLength.ShaLenEqShaInv:58]
+## 18. covolumes, theta-series index, congruences   /covol|thetaindex|congruencebetween/
+   all=5543 reached(d<=12)=1032  min depth=3
+     323 GroundTheory.HeightsAndTheta.Heights.FiniteCovolume
+     293 Development.AbelianVarietyTheory.Proofs.CovolumeBounds
+      70 Development.WeilBound.CoreStatements.AutomorphicKernels
+      56 Development.AbelianVarietyTheory.Definitions.TwistedInnerProducts
+     d=3 SelfIntersectionVolumeEstimates.topCovolSlim2_use_alt_alt  [Development.AutomorphicArithmetic.ThetaCorrespondence.ThetaPairLifts.ThirdPlaceSeries.TopCovolSlim2Use:16]
+     d=4 SelfIntersectionVolumeEstimates.topCovolG_alt_alt  [Development.AutomorphicArithmetic.ThetaCorrespondence.ThetaPairLifts.ThirdPlaceSeries.TopCovolG:39]
+     d=4 GlobalTheory.CovTop.CovolumeBoundOfX  [Development.AutomorphicArithmetic.ThetaCorrespondence.ThetaPairLifts.ThirdPlaceSeries.LiftLambdaBound:60]
+     d=5 GlobalTheory.T.covolX_of_truncation_badSet_lambda_lowBound  [Development.AutomorphicArithmetic.ThetaCorrespondence.ThetaPairLifts.ThirdPlaceSeries.CovolXOfStepsStatement:11]
+     d=5 GlobalTheory.Glob.CovolRow.linked_bundles_l3_of_open_alt  [Development.AutomorphicArithmetic.ThetaCorrespondence.ThetaPairLifts.ThirdPlaceSeries.LinkedBundlesL3OfOpen:31]
+     d=6 GlobalTheory.MixModel.ratMx  [Development.AbelianVarietyTheory.Definitions.TwistedInnerProducts.CovolOneIntegralAdd:27]
+## 19. Behrend sets in the Iwasawa tower   /behrend/
+   all=89 reached(d<=12)=0  min depth=-
+      28 Formalism.BehrendSets.Statement
+      25 Formalism.BehrendSets.StatementE
+      12 Formalism.BehrendSets.BehrendVariance.ProbEqSumIte
+       5 Formalism.BehrendSets.BehrendVariance.Select
+     (unreached) Formalism.BehrendSets.FinalE.trivStab  [Formalism.BehrendSets.FinalE:12]
+     (unreached) Formalism.BehrendSets.OrdGrp  [Formalism.BehrendSets.Statement:9]
+     (unreached) Formalism.BehrendSets.frob  [Formalism.BehrendSets.Statement:12]

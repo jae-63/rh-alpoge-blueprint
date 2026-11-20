@@ -346,7 +346,8 @@ flowchart TD
 | `graphs/decls-depth4.dot` | 441 declarations within 4 steps of `everyCharacter`, colored by pillar |
 | `graphs/imports-depth4.dot` | import graph, 4 levels from `MainConclusion` (6,952 modules), grouped by directory |
 | `data/summary.json` | the numbers above |
-| `scripts/` | index → trace → graphs pipeline (see below) |
+| `data/timeline-keywords.txt` | raw keyword hits for the 20 timeline items (§6) |
+| `scripts/` | index → trace → graphs pipeline (see below); `timeline.py` for §6 |
 
 Reproduce (about 2 min, no Lean needed). The commands assume the mirror is cloned next to this repo
 as `../rh-alpoge`:
@@ -359,10 +360,82 @@ python3 -I scripts/index.py $RH_SRC $W                               # decls.tsv
 (cd $W && python3 -I ../scripts/imports.py Development.AutomorphicArithmetic.CharacterBoxes.MainConclusion 4 imp4.json)
 python3 -I scripts/graphs.py $W graphs
 for g in pillars imports-depth4 decls-depth4; do dot -Tsvg graphs/$g.dot -o graphs/$g.svg; done
+(cd $W && python3 -I ../scripts/trace.py UpperTheory.FinalTheorems.everyCharacter 12 t12.json)   # ~5 min
+(cd $W && python3 -I ../scripts/timeline.py t12.json > ../data/timeline-keywords.txt)
 RH_WORK=$W scripts/show.sh UpperTheory.Top.VWin                      # print any declaration
 ```
 
-## 6. Limits of this analysis
+## 6. The author's timeline → Lean
+
+The announcement ([remark.pdf](https://alpo.ge/remark.pdf), sha256 `3fc97784…eb8d`, the same file
+NOTES.md records) gives the strategy and a 20-item timeline (pp. 3–4). The author warns (footnote 4)
+that parts of it paraphrase a Claude-written summary "which might make zero sense", and that the
+Lean is authoritative.
+
+**The strategy in one paragraph.** The model is Stepanov's proof of RH for curves over finite
+fields. That proof uses an auxiliary function vanishing to high multiplicity at the rational
+points. Over ℤ there is no multiplicity. The new idea is that each **theta lift between totally
+definite unitary groups stands in for one order of multiplicity**. Chaining
+U(X₀) → U(X₁) → … → U(X_m) gives multiplicity m, and for a von Mangoldt sum of length X one takes
+**m ≈ √X**. Positivity comes from "Stepanov determinants" of GGP/Bessel periods, aimed at a
+Weil-type positivity W(·) ≥ 0 for the smoothed sum Σ_{n≤X} Λ(n)(X/n − 1) − X log X + (1+γ)X.
+Done naively, each lift has a "cost" that stops the method at 2/3. Reaching ½ takes averaging over
+Hecke characters, an Iwasawa tower (chosen with Behrend sets), and control of H¹(o_E[1/ℓ], ℚ_ℓ/ℤ_ℓ(−e))
+classes that twisting cannot kill (a weak form of Vandiver).
+
+**How it fits §2.** The note's smoothed Λ-sum is *literally* `Formalism.G` / `Formalism.Gz`
+(`Formalism/Statement.lean`, `StatementOC.lean`). The Landau step of §2.5 turns a bound
+Gm ≤ x^{½+O(ε)} into zero-freeness. The theta-chain / determinant / divisibility machinery is what
+proves that bound, inside the `ChainTied` / `HypsAlt` package. The note's H¹ classes are the
+`shaLen` in `VWin` (§2.3), and its Iwasawa tower is the 2-power cyclotomic level e in
+`IsChiField` / `PageN` (ℚ(ζ_{2^{e+2}}), with 2^e ≈ x^{2+8ε}).
+
+### Item-by-item mapping
+
+Method: `scripts/timeline.py` greps declaration and module names for each item's keywords. It
+splits the hits into those within 12 steps of `everyCharacter` (157,116 declarations reached at
+depth ≤ 12) and the rest. I then read the top hits by hand. Raw output: `data/timeline-keywords.txt`.
+"d" is the step distance from `everyCharacter`. **Confidence**: ● the Lean object clearly is the
+note's object; ◐ the names and position fit, but I have not read the proof; ○ only weak or
+keyword-level evidence.
+
+| # | Note (date) | Where it appears to live in the Lean | Conf. |
+|---|---|---|---|
+| 1 | Stepanov determinant (10/6) | `Development/WeilBound/ThetaLifts/LeviDeterminants` (430 decls reached); `…/GaloisRepresentations/ThetaParseval/BlockDeterminants` (d=5); `AbelianVarietyTheory/Definitions/GaloisGeometry/DivisionOfDeterminantCharacter` (d=5) | ◐ |
+| 2 | Dᵖ ≡ 0 on a CM curve, divisibility of Dᵃθ(0)/Ωᵃ (10/9) | only CM-curve reduction results (`GlobalTheory.Published.cmCurveGoodOutsidePrime`, d=5, `AbelianVarietyTheory/Proofs/DivisorProofs`). No "invariant derivation" names | ○ |
+| 3 | qN = Mᵏ + R; path quadric; Parseval iterated k times (10/19+) | `Foundations/GaloisRepresentations/ThetaParseval/` (1,735 decls reached), which is also where `TLiftK` (d=2) lives: `HalfIndexLattices`, `ThetaKernels`, `SchurStep`. Footnote 3's "iterating Parseval k times" matches the folder name | ◐ |
+| 4 | W(1_S) ≥ 0 via a determinant (10/6+) | scattered: `GlobalTheory.T.weil_criterion_invariant_measure_homogeneous_space` (d=10), `PerronPsi.w_nonneg` (d=10). No central "W ≥ 0" declaration found by name | ○ |
+| 5 | switch to Λ = Σ Λ(n)(X/n−1)₊ − X log X + (1+γ)X; Guinand–Weil (10/20) | **`Formalism.G` / `Formalism.Gz` is exactly this function**; `HC.Level.Gm` combines it over a cyclic group of characters. Explicit formula: `GlobalTheory.ZeroBounds.explicit_formula_and_window_count` (d=7), `ExplicitFormula.truncated_explicit_formula` (d=8) | ● |
+| 6 | W(1_{(0,1]} + X^η 1_{(0,1/X]}) ≥ 0 gives zero-free beyond 1 − η (10/8) | the general form is `HC.Level.ChebyshevGrowthImpliesZeroFree` / `Landau.zero_free_of_Chebyshev_growth`: Gm ≤ x^θ ⇒ no zeros past θ (§2.5) | ◐ |
+| 7 | determinants of W(·) containing GGP periods; interlacing weights (10/14) | `GlobalTheory.SignedHC.GridData` in `…/Definitions/Foundations/StrictInterlaceIffDescEnum` (d=7); `T.bessel_period_nonvanishing_ascent_of_depth_data` (d=7); `MainNotions.PrimeDegreeVariant.Interlace` in `Formalism/SharpRestriction/Divisibility` (d=7) | ◐ |
+| 8 | iterated theta lifts U(X₀) → … → U(X_m), π ↦ π ⊞ μ_j[t]; m ≈ √X (11/15) | `…/Definitions/Divisors/LeastSplitAuxiliaryPrimeThetaChainSpec.lean` (d=7). It holds the chain's dimension bookkeeping, `rankV i j = r + j·t + i·sLen`, over m steps with interlacing grids, and a gap bound containing 48·n²·√m. Also `Corev.ChainParOfGap.chainPar_of_nodeGap` (`ThetaChainStepRealThetaRuleOfNodesFarApart`, d=7) | ◐ |
+| 9 | norms of lifts; divisibility via Chowla–Selberg, Weyl, Siegel mass (11/15) | `GlobalTheory.T.unitary_mass_formula` (d=7); `StandardLattice.SiegelMassRatioCM` in `Formalism/SharpRestriction/GlobalSchurBounds` (d=7); `Formalism/PeriodIntegrals/UnitaryGroupMassFormula` (~700 decls reached). Chowla–Selberg: 323 decls in `GroundTheory/HeightsAndTheta`, none reached at d ≤ 12 | ● mass / ○ Chowla–Selberg |
+| 10 | lower bound on divisibility of the m-fold lift (11/15) | `UpperTheory.Gal.Int.Div.*` (`IntegralStructures/ZetaCharacterDivisibility`, d=5); `Formalism/SharpRestriction/Divisibility`; `Formalism/LocalToGlobal/Divisibility` (its `DivisionCompatibilityDataThreeSided` appears in `DefiniteSideCondition`, §2.4) | ◐ |
+| 11 | Iwasawa tower, by analogy with 𝔽_{qⁿ}/𝔽_q (10/6) | **the 2-power cyclotomic level e in `UpperTheory.Top.IsChiField` / `PageN`** (§2.3). The keyword "Iwasawa" mostly hits `AbelianVarietyTheory/Proofs/IwasawaDecomposition` (G = KAN), which is unrelated | ● |
+| 12 | seesaw: the iterated lift's period is a Bessel period; Rallis (11/15) | `UpperTheory.TP.rallis_k` (`ThetaParseval/ThetaKernels/TPGRallis`, d=5); `Lit.Rallis.RallisIPProof.rallis_of_dm` (d=5); `ThetaCorrespondence/RallisInnerProduct`; `Core.Rk.Seesaw.seesaw_fubini` (d=6); `T.exists_seesaw_pair_of_theta_data` | ● |
+| 13 | Bost slope inequality (10/6) | `TraceIntegrality.slope_inequality_family_four` / `lower_slope_inequality_family` (`Formalism/LocalToGlobal/GlobalTheory/GL4`, d=9); `Formalism/HarderNarasimhan/…/SlopeIneqMean`. The Arakelov layer (Moriwaki bigness, arithmetic Hilbert–Samuel, §2.4) is related | ◐ |
+| 14 | "cost" of each lift; stops at 2/3; need for "division" (11/15) | `ChainTied`'s `CostWindows` / `ErrWindows` / `RestSize` (§2.5); `Gal.Int.Div.divAll_holds` (`DivisionOneGeometricRepresentation`, d=6). The exponent 2/3 itself was not located | ◐ |
+| 15 | integral structure across Hecke characters, a "gcd" (11/15) | `Foundations/GaloisRepresentations/IntegralStructures/` (738 decls reached). Notably **`Row0b` itself is proved there** (`galoisLocalGlobalStrong_recParameter`, d=1) | ◐ |
+| 16 | relative trace formula; projected Poincaré series; approximate orthogonality (10/14) | `AbelianVarietyTheory/Proofs/TwistedOperators/PoincareSeries*`: `poincareSeries_pairing_ne_zero_of_large_level` (d=9), `IdDom.identity_dominates` (d=10) | ◐ |
+| 17 | classes in H¹(o_E[1/ℓ], ℚ_ℓ/ℤ_ℓ(−e)) not killed by twisting; weak Vandiver (11/15) | **`Formalism.GaloisCohomology.shaLen`** (d=7), the quantity bounded in `VWin`; `AutomorphicVarieties/GaloisLibrary/GaloisCohomologyLength`, `SelmerTransport.ShaLenEq`. No declaration is named "Vandiver", "Lichtenbaum" or "K-group" | ● object / ○ Vandiver step |
+| 18 | covolumes, theta-series index, congruences between lifts and forms (11/15) | `GlobalTheory.CovTop.CovolumeBoundOfX` (d=4); `SelfIntersectionVolumeEstimates.topCovolSlim2_use_alt_alt` (d=3); `AbelianVarietyTheory/Proofs/CovolumeBounds`; `GroundTheory/HeightsAndTheta/Heights/FiniteCovolume` | ● |
+| 19 | the precise Iwasawa tower, using Behrend (10/19) | `Formalism/BehrendSets/` (89 decls). `OrdGrp s = (ℤ/2^{s+2})^× / ±1` is the Galois group of the tower layer in item 11. It is imported only by `Formalism/GL3MeanSquares/HookFormulaTorsion/DifferenceStableUnderAction`. **No Behrend declaration is reached at d ≤ 12.** Either it sits deeper, or my resolver misses it (the file uses `open`), or it is unused. Unresolved | ◐ |
+| 20 | GRH (11/16) | `allChi` / `UpperTheory.FinalTheorems.everyCharacter` (§1.2) | ● |
+
+**What this adds to §3 (crux vs. library).**
+- **The theta chain (items 7, 8, 10, 12, 14)** is the conceptual heart. Its Lean lives mostly in
+  the misleadingly named `AbelianVarietyTheory/{Definitions,Proofs}` subtrees `Divisors`,
+  `Foundations`, `TwistedOperators` and `DecoratedLatticeProofs`, and in `ThetaParseval`. So
+  "AbelianVarietyTheory" is not only shared library: some paper-specific steps are inside it. The
+  next tracing target is `LeastSplitAuxiliaryPrimeThetaChainSpec` and what consumes it.
+- **The note's chronology runs** determinant (10/6) → Λ-sum (10/20) → theta chains, cost, H¹,
+  covolumes (all 11/15) → GRH (11/16). So the √X-chain machinery was assembled in the final days.
+  Those are the items marked ◐ above, and the places where reading the proofs will pay off most.
+- **Items I could not pin down:** 2 (the derivation on CM curves), 4 (a central W ≥ 0 statement)
+  and the Vandiver/K-group step of 17. The note's own vocabulary does not appear in the code.
+  Finding them needs proof-level tracing, not name search.
+
+## 7. Limits of this analysis
 
 - **The name resolution is heuristic.** It catches fully qualified names, names under the current
   namespace and names under `open` namespaces. It misses instances, `simp` and tactic-found lemmas,
@@ -371,6 +444,7 @@ RH_WORK=$W scripts/show.sh UpperTheory.Top.VWin                      # print any
 - Indented or `private` declarations inside sections are partly missed: 1,057,373 indexed vs.
   1,060,822 counted by NOTES.md.
 - The plain-math readings of `VWin`, `TLiftK` and `HypsAlt` are paraphrases of long Lean
-  statements. Check them against the PDF (https://alpo.ge/remark.pdf), which I did not read.
+  statements. The announcement (§6) is a 4-page note, not a paper, so it cannot check them in
+  detail. It does confirm the overall shape: theta chains, the Λ-sum, Iwasawa tower and H¹ classes.
 - "Crux" is a judgment from naming, constants and position in the graph, not from understanding
   the proofs.
