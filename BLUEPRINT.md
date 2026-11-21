@@ -264,14 +264,18 @@ With θ = ½ + O(ε) and ε → 0, this gives zero-freeness for Re s > ½.
 | Layer | Verdict | Why |
 |---|---|---|
 | §1 (Main → allChi) | **classical** | Mathlib functional equations; about 200 lines |
-| `Top.imprimitive`, `Claim.*` | classical | Euler-factor bookkeeping |
-| Landau step (`zero_free_of_Chebyshev_growth`, `FormB`) | classical, formalized | Landau's nonnegative-coefficient theorem |
+| `Top.imprimitive`, `Claim.*` | classical, **built locally ✔** | Euler-factor bookkeeping |
+| Landau step (`zero_free_of_Chebyshev_growth`, `FormB`) and `TopWin` | classical, **built locally ✔** | Landau's nonnegative-coefficient theorem |
 | **`level_gm_le_on_family_scales` / `windowInequality_of_artinInputs` / `ChainTied`** | **crux (analytic)** | square-root bound for the prime sums, derived from "Artin inputs" of auxiliary fields |
 | **`VWin` / `automorphic_window_of_inputs`** | **crux (arithmetic)** | specific constants (401, 1/52, q≡3 mod 8, d≡7 mod 16); Sha bounds by automorphy |
 | **`HypsAlt` / `nonempty_hyps_definite_side_of_closed_bound` / `shape_closed_link_n_of_green` → `TopG`** | **crux (construction)** | builds the families from theta lifts on definite unitary groups |
 | `Row0b` via `TLiftK` + `geoOne_holds` | known theorem, new route? | Harris–Taylor / Caraiani-type, but proved through theta lifting |
 | `recTExists` (LLC for GL_n), Green's theorem | known theorems | library |
 | The ~191 `*_of_literature` items that do not touch `O` (Hironaka, Siegel–Weil, Fargues, Bhatt–Scholze, Moriwaki, …) | library | general development; most of the 175k files |
+
+✔ means the module builds and its key theorems use only `propext`, `Classical.choice` and
+`Quot.sound`. This was checked in a 236-module build; see [`local-build/`](local-build/README.md).
+The checked theorems are implications that *assume* the crux rows below, so the crux is not covered.
 
 **Rough rule.** Look for declarations whose statements carry concrete constants or ad hoc names
 (`CharacterBoxes`, `PrimitiveCosets`, `ThirdPlaceSeries`, `DenseThresholdCases`,

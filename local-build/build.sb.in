@@ -1,0 +1,9 @@
+(version 1)
+(allow default)
+(deny network*)
+(deny file-write*)
+(allow file-write*
+  (subpath "BUILD_DIR")
+  (subpath "/private/var/folders")
+  (subpath "/private/tmp")
+  (literal "/dev/null") (literal "/dev/tty") (literal "/dev/dtracehelper"))

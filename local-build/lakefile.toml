@@ -1,0 +1,21 @@
+# Minimal subset of the rh-alpoge submission: the import closure of
+# six target modules. Same Mathlib pin and options as the original lakefile.
+name = "tree"
+srcDir = "src"
+moreLeanArgs = ["--tstack=400000"]
+
+[leanOptions]
+autoImplicit = false
+relaxedAutoImplicit = false
+maxSynthPendingDepth = 3
+pp.unicode.fun = true
+maxHeartbeats = 4000000
+
+[[require]]
+name = "mathlib"
+git = "https://github.com/leanprover-community/mathlib4"
+rev = "0df444a360eaa60ab8c11dca51a86af692955474"
+
+[[lean_lib]]
+name = "Mini"
+globs = ["Development.+", "Formalism.+", "Lemmata.+", "ReciprocityTheory.+"]

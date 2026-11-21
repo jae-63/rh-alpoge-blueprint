@@ -28,6 +28,7 @@ is the usual first step toward understanding a proof this size. This is a compan
 | `graphs/decls-depth4.{dot,svg}` | the 441 declarations within 4 steps of the main theorem |
 | `graphs/imports-depth4.{dot,svg}` | the import graph, 4 levels down, grouped by directory |
 | `data/summary.json` | the numbers behind the tables |
+| `local-build/` | sandboxed build of the 236-module closure of six top modules, with `#print axioms` output |
 | `scripts/` | index → trace → graphs pipeline: plain Python over the source text, no Lean needed |
 
 ## Findings so far
@@ -49,6 +50,10 @@ is the usual first step toward understanding a proof this size. This is a compan
   multiplicity. Its smoothed Λ-sum is literally `Formalism.G`, its Iwasawa tower is the 2-power
   cyclotomic level in `VWin`, and its H¹ classes are `VWin`'s `shaLen`. Much of the theta-chain
   machinery sits inside the misleadingly named `AbelianVarietyTheory` tree.
+- **The classical layers type-check locally** ([`local-build/`](local-build/README.md)). A
+  236-module build on a 16 GB Mac covers `ClaimStrip`, `Imprimitive`, `ExistsPageN`, `Landau`,
+  `TopWin` and `BehrendSets.FinalE`. They build with no errors, and the key theorems use only the
+  three standard axioms. These theorems assume the crux bounds; they do not prove them.
 - **The "literature" theorems are proved, not assumed.** 191 of the 195 `*_of_literature` theorems
   (Hironaka, Siegel–Weil, Fargues, Bhatt–Scholze, …) never use their hypothesis bundle, and that
   bundle is itself filled in with proved theorems.
